@@ -7,12 +7,14 @@
 }
 body {
   background-color: #1f1f1f;
-  position: relative;
+  /* position: relative; */
   overflow-x: hidden;
   z-index: -2;
 }
 
 .main_page {
+  top: 75px;
+  height: calc(100vh - 75px);
   -webkit-transition: 0.25s linear;
   transition: 0.25s linear;
   -webkit-transform: translateX(0);
@@ -40,13 +42,19 @@ body {
 .hamburger.is-active .hamburger-inner::after {
   background-color: white;
 }
-.main_page.hamburger_open {
+.main_page.hamburger_open,
+header.hamburger_open {
   box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
   -webkit-transform: translateX(-70%);
   transform: translateX(-70%);
 }
 
 header {
+  transition: 0.25s linear;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  position: fixed;
   width: 100vw;
   height: 75px;
   background-color: #161616;
@@ -56,6 +64,8 @@ header {
   justify-content: space-between;
   -webkit-box-align: center;
   align-items: center;
+}
+header.open {
 }
 
 .header__logo {
@@ -79,7 +89,8 @@ header {
 }
 
 .nav {
-  top: 0;
+  /* top: 75px; */
+  position: fixed;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: center;
@@ -120,7 +131,7 @@ a[href^="tel"] {
   align-items: left;
   background-image: url("../assets/background_image2.jpg");
   background-position-x: -50px;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   /* background-color: green; */
   background-size: cover;
   background-repeat: no-repeat;
