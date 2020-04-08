@@ -3,25 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>BAUMATMAX</title>
+    <link href="./styles/hamburgers.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles/style.css" />
+    <meta name="”format-detection”" content="”telephone" ="no”" />
+    <script
+      src="https://kit.fontawesome.com/c556c5e77c.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <nav class="nav">
       <ul class="nav__list">
-        <li>Home</li>
-        <li>About</li>
-        <li>Gallery</li>
-        <li>Contact</li>
+        <li>START</li>
+        <li>OFERTA</li>
+        <li>O FIRMIE</li>
+        <li>REALIZACJE</li>
+        <li>KONTAKT</li>
       </ul>
     </nav>
     <div class="main_page">
       <header>
-        <div class="header__logo">BAUMATMAX</div>
-        <div class="hamburger">=</div>
+        <div class="header__logo"><i class="fas fa-home"></i>BAUMATMAX</div>
+        <button class="hamburger hamburger--collapse" type="button">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
       </header>
       <div>
-        <div class="container"></div>
+        <div class="container">
+          <div class="title_and_description">
+            <h1 class="container__title">BAUMAT<span>MAX</span></h1>
+
+            <h3 class="container__description">
+              Oferujemy kompleksowe remonty oraz wykończenia wnętrz. Wieloletnie
+              doświadczenie to gwarancja najwyższej jakości usług oraz Twojego
+              zadowolenia.
+            </h3>
+            <h4 class="container__call">
+              Zadzwoń:
+              <span class="number">793 084 783</span>
+            </h4>
+            <button class="container__offer">
+              NASZA OFERTA<i class="fas fa-arrow-circle-down"></i>
+            </button>
+          </div>
+        </div>
         <div class="container__second">MAIN CONTENT2</div>
       </div>
     </div>
