@@ -50,6 +50,7 @@ header.hamburger_open {
 }
 
 header {
+  -webkit-transition: 0.25s linear;
   transition: 0.25s linear;
   z-index: 2000;
   top: 0;
