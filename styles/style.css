@@ -5,6 +5,17 @@
   color: white;
   font-family: Arial, Helvetica, sans-serif;
 }
+html {
+  position: relative;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /* overflow: hidden; */
+}
+*:focus {
+  outline: 0;
+}
 body {
   background-color: #1f1f1f;
   /* position: relative; */
@@ -44,7 +55,8 @@ body {
 }
 .main_page.hamburger_open,
 header.hamburger_open {
-  box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
+  /* filter: blur(1.5px); */
+  /* box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75); */
   -webkit-transform: translateX(-70%);
   transform: translateX(-70%);
 }
@@ -56,7 +68,7 @@ header {
   top: 0;
   left: 0;
   position: fixed;
-  width: 100vw;
+  width: 101vw;
   height: 75px;
   background-color: #161616;
   display: -webkit-box;
@@ -71,9 +83,9 @@ header.open {
 
 .header__logo {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 23px;
   color: #f39c12;
-  margin-left: 30px;
+  margin-left: 25px;
 }
 
 .nav__list {
@@ -81,7 +93,7 @@ header.open {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   flex-direction: column;
-
+  z-index: 20000;
   height: 70%;
   -webkit-box-pack: space-evenly;
   justify-content: space-evenly;
@@ -90,8 +102,6 @@ header.open {
 }
 
 .nav {
-  /* top: 75px; */
-  position: fixed;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: center;
@@ -107,6 +117,8 @@ header.open {
   background-color: #1f1f1f;
 }
 .nav.open {
+  /* top: 75px; */
+  position: fixed;
   -webkit-transform: translateX(0);
   transform: translateX(0);
 }
@@ -115,14 +127,15 @@ a[href^="tel"] {
   color: inherit;
 }
 .fas.fa-home {
-  padding-right: 10px;
-  color: #f39c12;
-  font-size: 30px;
+  padding-right: 5px;
+  color: #fff;
+  font-size: 32px;
 }
 
 .container {
   display: -webkit-box;
   display: flex;
+  /* z-index: -100000; */
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   flex-direction: column;
@@ -139,6 +152,7 @@ a[href^="tel"] {
   /* background-position: left; */
   background-origin: content-box;
   width: 100%;
+
   height: calc(100vh - 75px);
 }
 .title_and_description {
@@ -169,9 +183,12 @@ span {
 }
 
 .container__second {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
-  background-color: blue;
-  height: 100vh;
+  background-color: #222222;
+  height: 265vh;
 }
 .nav__list.open {
   display: -webkit-box;
@@ -191,7 +208,7 @@ ul li {
   position: relative;
   color: #979797;
 }
-ul li::after {
+ul .nav_li::after {
   content: "";
   width: 70%;
   height: 1px;
@@ -203,19 +220,317 @@ ul li::after {
 .number {
   color: #f39c12;
 }
+
 .container__offer {
   font-size: 20px;
-  border: 1px solid white;
+  border: 1px solid #f39c12;
   padding: 15px 20px;
   background-color: #f39c12;
   margin-top: 30px;
+  font-weight: 700;
   margin-left: 25px;
+  outline: none;
 }
 .fas.fa-arrow-circle-down {
   margin-left: 10px;
 }
-@media (min-width: 600) {
-  nav {
-    display: none;
+
+.container__second_offerTitle {
+  margin-bottom: 70px;
+  margin-top: -30px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  padding-top: 15vh;
+}
+.container__second_gridOffer {
+  display: inline-grid;
+  grid-template-rows: 72vh 72vh 72vh;
+  grid-template-columns: 80vw;
+  grid-row-gap: 20px;
+  grid-column-gap: 10px;
+
+  grid-template-areas: "box1" "box2" "box3" "box4";
+  /* align-items: center; */
+}
+p {
+  position: relative;
+  color: #020202;
+}
+#p_boxes_title {
+  text-align: center;
+  font-size: 22px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #444444;
+}
+#p_boxes_description {
+  color: #444444;
+  font-weight: 100;
+  text-align: center;
+  margin: 15px 35px 25px 35px;
+}
+.box1 {
+  display: flex;
+  flex-flow: column;
+  /* flex-direction: column; */
+
+  background-color: whitesmoke;
+  position: relative;
+
+  grid-area: box1;
+  border: 1px solid gray;
+}
+.box_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+}
+.offer_img {
+  position: relative;
+  max-height: 70%;
+  max-width: 100%;
+  /* position: relative;
+  top: 0;
+  left: 0; */
+}
+.check_offer_btn {
+  font-weight: bold;
+  /* margin-bottom: 50px; */
+  font-size: 70%;
+  width: 50%;
+  max-width: 50%;
+  height: 5vh;
+  background-color: #f39c12;
+  border: 1px solid #f39c12;
+}
+.box2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+
+  background-color: whitesmoke;
+  position: relative;
+
+  grid-area: box2;
+  border: 1px solid gray;
+}
+.box3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+
+  background-color: whitesmoke;
+  position: relative;
+
+  grid-area: box3;
+  border: 1px solid gray;
+}
+
+.box4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+
+  background-color: whitesmoke;
+  position: relative;
+
+  grid-area: box3;
+  border: 1px solid gray;
+}
+
+.box5 {
+  /* width: 80vw;
+  height: 60vh; */
+  margin: auto;
+  background-color: red;
+  margin-bottom: 5px;
+}
+.box6 {
+  /* width: 80vw;
+  height: 60vh; */
+  margin: auto;
+  background-color: red;
+}
+.third_container {
+  display: flex;
+  flex-direction: column;
+  background-image: url("../assets/third_container.jpg");
+  background-repeat: no-repeat;
+  background-size: 320vh;
+  align-items: center;
+  padding: 40px 20px 30px 20px;
+  height: 350vw;
+}
+.third_container_whyUs_p {
+  color: #f39c12;
+  font-size: 40px;
+  font-weight: bold;
+  padding-bottom: 25px;
+  /* padding: 40px 20px 30px 20px; */
+}
+.third_container_text {
+  font-size: 15px;
+
+  font-weight: 100;
+  line-height: 1.7;
+  padding: 0 30px 0 30px;
+  letter-spacing: 2px;
+  position: relative;
+  color: white;
+}
+.third_container_text2 {
+  font-size: 15px;
+  flex: 1;
+  margin-top: 20px;
+  font-weight: 100;
+  line-height: 1.7;
+  padding: 0;
+  margin-top: 50px;
+  letter-spacing: 2px;
+  position: relative;
+  color: white;
+}
+.third_container_points {
+  height: 10vh;
+  padding: 20px 30px 0 30px;
+}
+.li_third_container {
+  margin-bottom: 20px;
+}
+.li_third_container::before {
+  content: "";
+  border: 1px solid #f39c12;
+  border-radius: 50px;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+}
+.fourth_container {
+  height: 150vh;
+  background-color: #fff;
+}
+.fouth_container__title {
+  color: rgb(34, 34, 34);
+}
+input {
+  border-radius: 0;
+  font-size: 14px;
+  background-color: #1f1f1f;
+  border: 0;
+  color: white;
+  margin-bottom: 15px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid white;
+  width: 100%;
+}
+
+textarea {
+  background-color: #1f1f1f;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid white;
+  width: 100%;
+  font-size: 14px;
+}
+h3 {
+  font-size: 40px;
+}
+
+.fifth_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 175vh;
+  width: 100vw;
+}
+form {
+  font-size: 30px;
+}
+.info_icons {
+  margin-bottom: 30px;
+  padding-right: 15px;
+}
+.send_message {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: 1px solid #f39c12;
+  color: white;
+  font-size: 14px;
+  background-color: #f39c12;
+  padding: 19px 31px;
+  width: 100%;
+}
+.form {
+  width: 80%;
+}
+.grid1 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.grid2 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+/* #checkbox::after {
+  position: relative;
+  content: "Moje dane osobowe będą przetwarzana przez współadministratorów (właściciela strony www.tkm-remonty.pl) na podstawie art. 6 ust. 1 lit. b ogólnego rozporządzenia o ochronie danych osobowych w celu odpowiedzi na pytania oraz kontynuowania korespondencji elektronicznej. Moje dane osobowe mogą być powierzone podmiotom trzecim świadczącym usługi na rzecz współadministratorów. Moje daje osobowe nie będą przekazywane poza obszar EOG. Moje dane osobowe będą przetwarzane przez okres wymiany wiadomości w korespondencji elektronicznej oraz zostaną usunięte do końca roku kalendarzowego następującego po roku, w którym ostatni raz się z wami kontaktowałem/am w sprawie zawarcia umowy Przysługuje mi prawo dostępu do treści swoich danych, żądania ich sprostowania, usunięcia lub ograniczenia przetwarzania, a także wniesienia sprzeciwu wobec przetwarzania danych, a także prawo do ich przenoszenia. Przysługuje mi prawo do wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych lub innego właściwego organu nadzorczego, gdy uznam że przetwarzanie moich danych narusza przepisy. Podanie moich danych osobowych jest dobrowolne, ale konieczne dla korespondencji.";
+} */
+footer {
+  width: 100vw;
+  height: 25vh;
+  background-color: #171717;
+  color: #5b5b5b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .container__second {
+    height: 100vh;
+  }
+  .container__title {
+    font-size: 100px;
+  }
+  .container__description {
+    font-size: 36px;
+  }
+  .container__call {
+    font-size: 36px;
+  }
+  .third_container {
+    background-attachment: fixed;
+    height: 100vh;
+    background-size: auto;
+  }
+  .container__second_gridOffer {
+    display: grid;
+    grid-template-columns: 30vw 30vw 30vw;
+    grid-template-rows: 60vh 60vh;
+    grid-template-areas: "box1 box2 box3";
+  }
+  .container {
+    background-attachment: fixed;
+    background-position-x: 0;
+  }
+  .fifth_container {
+    height: 100vh;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .check_offer_btn {
+    /* margin-bottom: 10px; */
   }
 }
