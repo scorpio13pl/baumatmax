@@ -365,7 +365,7 @@ p {
   background-size: 320vh;
   align-items: center;
   padding: 40px 20px 30px 20px;
-  height: 350vw;
+  min-height: 100vh;
 }
 .third_container_whyUs_p {
   color: #f39c12;
@@ -397,7 +397,7 @@ p {
   color: white;
 }
 .third_container_points {
-  height: 10vh;
+  min-height: 10vh;
   padding: 20px 30px 0 30px;
 }
 .li_third_container {
@@ -576,7 +576,7 @@ footer {
   }
   .third_container {
     background-attachment: fixed;
-    height: 100vh;
+    min-height: 100vh;
     background-size: auto;
   }
   .container__second_gridOffer {
