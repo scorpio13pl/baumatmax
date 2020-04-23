@@ -12,5 +12,3 @@ hamburger.addEventListener("click", () => {
   navMobile.classList.toggle("open");
   mainPage.classList.toggle("hamburger_open");
 });
-
-$;
